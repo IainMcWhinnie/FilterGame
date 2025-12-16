@@ -12,7 +12,7 @@ and we prove that `S ⊆ φ⁻¹' ( φ '' S )`.
 
 In this proof you will come across a goal with the existential quantifier `∃` in it.
 To prove this goal you will need to provide an element that satisfies the quantified
-statement. For this use the new tactic `exists`. Take a look at the description in the
+statement. For this use the new tactic `use`. Take a look at the description in the
 list of tactics on the right."
 
 namespace MyGame
@@ -24,26 +24,26 @@ TheoremTab "Function"
 /--
 ## Summary
 
-Use `exists <element>` when you need to provide an example element to prove a goal wrapped in
+Use `use <element>` when you need to provide an example element to prove a goal wrapped in
 the existential quantifier `∃`.
 
 ### Example
 
 * Suppose you have a set `S : Set 𝓧` and an element `x : 𝓧` and a proof that `x` is
 contained in `S`, `h : x ∈ S`. If you have a goal `∃ y ∈ S, P y` and a proof that `x`
-satisfies the predicate `P`, say `hx: P x`. Then you can prove the goal using `exists x`.
-Note that `exists` intelligently pulls the necessary proofs of `x ∈ S` and `P x` from
+satisfies the predicate `P`, say `hx: P x`. Then you can prove the goal using `use x`.
+Note that `use` intelligently pulls the necessary proofs of `x ∈ S` and `P x` from
 the current list of hypotheses.
 
 ### Details
 
-Like the `rw` tactic, `exists` will attempt to close the goal with `rfl` after
+Like the `rw` tactic, `use` will attempt to close the goal with `rfl` after
 substituting in the given element. So with the hypotheses `x : 𝓧`, `S : Set 𝓧`
-and `x ∈ S` and the goal `∃ y ∈ S, y = x`, the tactic `exists x` will close the goal
+and `x ∈ S` and the goal `∃ y ∈ S, y = x`, the tactic `use x` will close the goal
 since the subsituted statement `x = x` is proved by `rfl`.
 -/
-TacticDoc «exists»
-NewTactic «exists»
+TacticDoc use
+NewTactic use
 
 
 /--
@@ -57,10 +57,10 @@ Statement subset_preimage_image : S ⊆ φ⁻¹' ( φ '' S ) := by
   the theorems `subset_def`, `mem_preimage` and `mem_image` to turn the goal
   into something more familiar.
 
-  You will need to use `exists` at some point."
+  You will need to use the `use` tactic at some point."
   rw [subset_def]
   intro x
   intro h1
   rw [mem_preimage]
   rw [mem_image]
-  exists x
+  use x
