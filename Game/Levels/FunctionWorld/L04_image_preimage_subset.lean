@@ -1,5 +1,4 @@
 import Game.Levels.FunctionWorld.L03_preimage_mono
-
 import Mathlib.Order.Filter.Basic
 
 World "FunctionWorld"
@@ -63,19 +62,17 @@ name `cases'`. For Filter Game, we will use the older `cases'` as it has the sim
 (and Natural Numbers Game players will be familiar it).
 -/
 TacticDoc cases'
-
 NewTactic cases'
 
 
 lemma mem_image (φ : 𝓧 → 𝓨) (S : Set 𝓧) (y : 𝓨) : y ∈ φ '' S ↔ ∃ x ∈ S, φ x = y := by rfl
-
 /--
 `mem_image` is the proof that `y ∈  φ '' S ↔ ∃ x ∈ S, φ x = y`. This is true
 because it's precisely the *definition* of the image `φ '' S` of `S`.
 -/
 TheoremDoc MyGame.mem_image as "mem_image" in "Function"
-
 NewTheorem MyGame.mem_image
+
 
 /--
 `image_preimage_subset` is the proof that  φ '' (φ⁻¹' T) ⊆ T`.
@@ -107,5 +104,3 @@ Statement image_preimage_subset : φ '' (φ⁻¹' T) ⊆ T := by
   the previous levels."
   rw [mem_preimage, hwr] at hwl
   exact hwl
-
-open Filter

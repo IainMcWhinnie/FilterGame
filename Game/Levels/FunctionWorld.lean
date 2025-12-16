@@ -2,6 +2,7 @@ import Game.Levels.FunctionWorld.L01_preimage_univ
 import Game.Levels.FunctionWorld.L02_preimage_inter
 import Game.Levels.FunctionWorld.L03_preimage_mono
 import Game.Levels.FunctionWorld.L04_image_preimage_subset
+import Game.Levels.FunctionWorld.L05_subset_preimage_image
 
 World "FunctionWorld"
 Title "Sets and functions"
