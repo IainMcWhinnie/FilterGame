@@ -60,7 +60,7 @@ Statement image_comp (S : Set 𝓧) : (ψ ∘ φ) '' S = ψ '' (φ '' S) := by
       exact hsr
 
   Hint "Excellent work! We're half way to proving the theorem. Start by introducing the hypothesis
-  with `intro h` and then rewrite things with `rw [mem_image] at *` just like before."
+  with `intro h` and then rewrite things with `rw [mem_image] at *`, just like before."
   . intro h
     rw [mem_image] at *
     Hint "Just like before, we have a hypothesis stating the existence of an element of `S`
