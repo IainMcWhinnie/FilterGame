@@ -77,6 +77,9 @@ Statement image_subset_iff {S : Set 𝓧} {T : Set 𝓨} {φ : 𝓧 → 𝓨}  :
   . intro h
     intro x hx
     rw [mem_preimage]
+    Hint "Here we have a hypothesis of the form `∀ x, ...` so we could use specialize. However,
+    a better way to proceed here is to use `apply` (because the goal matches the conclusion of
+    the hypothesis)."
     apply h
     rw [mem_image]
     use x
@@ -85,11 +88,13 @@ Statement image_subset_iff {S : Set 𝓧} {T : Set 𝓨} {φ : 𝓧 → 𝓨}  :
     rw [mem_image] at hx
     cases' hx with w hw
     cases' hw with hwl hwr
+    Hint "This time we have a hypothesis of the form `∀ x, ...` and you will need to use
+    `specialize` to continue."
     specialize h w hwl
     rw [mem_preimage, hwr] at h
     exact h
 
 Conclusion "That's enough practice with functions. Going forward, we will be able to use the
 concepts of Function World to pull back and push forward filters along functions. The tactics
-you've learnt here will be also be necassary to be able to prove theorems about more complex
+you've learnt here will also be necessary to be able to prove theorems about more complex
 (and important) examples of filters."

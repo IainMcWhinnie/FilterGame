@@ -21,7 +21,7 @@ encapsulates the definition above.
 
 Because the use of the existential quantifier `∃`, we will need the help of a new tactic
 `cases'`. Take a look at description of `cases'` in the list of tactics on the right.
-In particular, we will use `cases'` to instantiate a variable from a hypothesis written
+In particular, we will use `cases'` to instantiate an element from a hypothesis written
 with `∃`."
 
 namespace MyGame
@@ -100,7 +100,6 @@ Statement image_preimage_subset : φ '' (φ⁻¹' T) ⊆ T := by
   Hint "Now use `cases'` again to break up the logical AND statement into its left and right
   component parts."
   cases' hw with hwl hwr
-  Hint "Great! Now see if you can finish off the level. Remember to use `mem_preimage` from
-  the previous levels."
+  Hint "Great! Now see if you can finish off the level. Remember to use the `mem_preimage` theorem."
   rw [mem_preimage, hwr] at hwl
   exact hwl

@@ -10,10 +10,10 @@ Introduction "Again we will fix two \"base sets\" `𝓧` and `𝓨` and
 a function `φ : 𝓧 → 𝓨`. This time we take a subset of the domain `S : Set 𝓧`
 and we prove that `S ⊆ φ⁻¹' ( φ '' S )`.
 
-In this proof you will come across a goal with the existential quantifier `∃` in it.
+In this proof you will come across a goal involving the existential quantifier `∃`.
 To prove this goal you will need to provide an element that satisfies the quantified
-statement. For this use the new tactic `use`. Take a look at the description in the
-list of tactics on the right."
+statement. For this you will need the new tactic `use`. Take a look at the description
+of `use` in the Tactics tabe on the right."
 
 namespace MyGame
 
@@ -64,3 +64,6 @@ Statement subset_preimage_image : S ⊆ φ⁻¹' ( φ '' S ) := by
   rw [mem_preimage]
   rw [mem_image]
   use x
+
+Conclusion "You've met function preimages and images. Next we shall look at function
+composition."
